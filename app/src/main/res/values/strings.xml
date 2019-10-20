@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EnglishVocabularyApp</string>
+    <string name="toast">Button pressed</string>
 </resources>

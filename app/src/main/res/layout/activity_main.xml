@@ -20,10 +20,12 @@
             android:layout_weight="1">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Translate  XXXXXXX" />
+                android:gravity="center"
+                android:textSize="24sp"
+                android:text="" />
         </LinearLayout>
 
         <LinearLayout
@@ -34,17 +36,17 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnAnswer1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Alt 1" />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnAnswer2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Alt 2" />
@@ -57,16 +59,16 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnAnswer3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Alt 3" />
 
             <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnAnswer4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Alt 4" />
         </LinearLayout>
