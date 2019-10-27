@@ -10,6 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +31,23 @@ public class MainActivity extends AppCompatActivity {
             refresh();
         }
     };
+
+    private String readRawResource() throws IOException {
+        InputStream is = getResources().openRawResource(R.raw.vocabulary);
+        Writer writer = new StringWriter();
+        char[] buffer = new char[1024];
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
+            }
+        } finally {
+            is.close();
+        }
+
+        return writer.toString();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
             btnAnswers[i].setOnClickListener(btnListener);
         }
 
-        mVocabulary.init();
+        try {
+            mVocabulary.init(readRawResource());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
